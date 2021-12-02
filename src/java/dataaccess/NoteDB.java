@@ -13,7 +13,7 @@ public class NoteDB {
         
         try {
             User user = em.find(User.class, owner);
-            return user.getNoteList();
+            return (List) user.getNoteCollection();
         } finally {
             em.close();
         }
@@ -39,7 +39,7 @@ public class NoteDB {
         
         try {
             User user = note.getOwner();
-            user.getNoteList().add(note);
+            user.getNoteCollection().add(note);
             trans.begin();
             em.persist(note);
             em.merge(user);
@@ -72,7 +72,7 @@ public class NoteDB {
         
         try {
             User user = note.getOwner();
-            user.getNoteList().remove(note);
+            user.getNoteCollection().remove(note);
             trans.begin();
             em.remove(em.merge(note));
             em.merge(user);
