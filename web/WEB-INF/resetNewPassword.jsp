@@ -1,6 +1,6 @@
 <%-- 
-    Document   : reset
-    Created on : 1-Dec-2021, 6:04:51 PM
+    Document   : resetNewPassword
+    Created on : 2-Dec-2021, 2:54:08 PM
     Author     : david
 --%>
 
@@ -12,12 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Reset Password</h1>
-        <p>Please enter your email address to reset your password</p>
+        <h1>Enter a new password</h1>
         
         <form action="reset" method="post">
-            Email Address: <input type="text" name="email"><br>
+            <input type="text" name="password"><br>
             <input type="submit" value="Submit">
+            <input type="hidden" name="uuid" value="${uuid}">
         </form>
     </body>
 </html>

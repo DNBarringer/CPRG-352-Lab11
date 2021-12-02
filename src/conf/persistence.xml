@@ -7,5 +7,6 @@
     <class>models.User</class>
     <class>models.Role</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties/>
   </persistence-unit>
 </persistence>
